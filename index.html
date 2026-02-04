@@ -5,18 +5,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interactivia | The Pet world</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="scene">
-    <div class="cat">
+  <header>
+    <h1>Interactivia</h1>
+  </header>
+  <input type="radio" name="animal" id="bear" checked>
+  <input type="radio" name="animal" id="dog">
+  <div class="labels">
+    <label for="bear">Bear</label>
+    <label for="dog">Dog</label>
+  </div>
+  <main class="scene">
+    <div class="bear">
       <div class="head">
-      </div>
-      <div class="body">
+        <div class="hider"></div>
+        <div class="ears">
+          <div class="left">
+          </div>
+          <div class="innerleft">
+          </div>
+          <div class="right">
+          </div>
+          <div class="innerright">
+          </div>
+        </div>
+        <div class="eyes">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <div class="nose">
+        </div>
+        <div class="wiskers">
+        </div>
+        <div class="mouth">
+        </div>
       </div>
     </div>
-  </div>
+    <div class="dog">
+    </div>
+  </main>
   <script src="main.js"></script>
 </body>
 </html>

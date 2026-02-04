@@ -2,6 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Comfortaa";
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+header h1 {
+    text-align: center;
+    color: #99CCCC;
+    padding: 0.5em;
+    backdrop-filter: blur(1px);
 }
 .scene {
     background: #DFFFFF;
@@ -10,23 +23,161 @@
     align-items: center;
     justify-content: center;
 }
-.cat {
+.bear {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    display: none;
 }
-.head {
-    width: 100px;
+.bear .head {
+    position: relative;
+    width: 10em;
+    height: 10em;
+    background-color: #FFE5CF;
+    border-radius: 50%;
+    border: 2px solid #ECCAAE;
+}
+.bear .hider {
+    position: relative;
+    width: calc(10em - 3px);
+    height: calc(10em - 3px);
+    background-color: #FFE5CF;
+    border-radius: 50%;
+    z-index: 2;
+}
+.bear .ears .left {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    width: 3.5em;
+    height: 5em;
+    background: #FFE5CF;
+    border-radius: 35% 100% 0 0;
+    transform: rotate(-25deg);
+    z-index: 1;
+    border: 2px solid #EAC297;
+}
+.bear .ears .innerleft {
+    position: absolute;
+    top: 0.4em;
+    left: 0.3em;
+    width: 3em;
+    height: 4.5em;
+    background: #ECCAAE;
+    border-radius: 35% 100% 0 0;
+    transform: rotate(-25deg);
+    z-index: 1;
+}
+.bear .ears .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5em;
+    height: 5em;
+    background: #FFE5CF;
+    border-radius: 100% 35% 0 0;
+    transform: rotate(25deg);
+    z-index: 1;
+    border: 2px solid #EAC297;
+}
+.bear .ears .innerright {
+    position: absolute;
+    top: 0.4em;
+    right: 0.3em;
+    width: 3em;
+    height: 4.5em;
+    background: #ECCAAE;
+    border-radius: 100% 35% 0 0;
+    transform: rotate(25deg);
+    z-index: 1;
+}
+
+.bear .eyes .left {
+    position: absolute;
+    top: 3em;
+    left: 2.5em;
+    width: 1.5em;
+    height: 1.7em;
+    background: #2B2B2B;
+    border-radius: 50%;
+    z-index: 3;
+}
+.bear .eyes .right {
+    position: absolute;
+    top: 3em;
+    right: 2.5em;
+    width: 1.5em;
+    height: 1.7em;
+    background: #2B2B2B;
+    border-radius: 50%;
+    z-index: 3;
+}
+.bear .nose {
+    position: absolute;
+    top: 5em;
+    left: 4.3em;
+    width: 1.2em;
+    height: 1.3em;
+    background: brown;
+    border-radius: 50%;
+    z-index: 3;
+}
+.bear .mouth {
+    position: absolute;
+    top: 4.7em;
+    left: 3.2em;
+    width: 3.5em;
+    height: 3em;
+    background: transparent;
+    border-left: 0.2em solid #FFE5CF;
+    border-right: 0.2em solid #FFE5CF;
+    border-top: 0.2em solid #FFE5CF;
+    border-bottom: 0.2em solid #2B2B2B;
+    border-radius: 50%;
+    z-index: 3;
+}
+#bear:checked ~ .scene .bear {
+    display: block;
+}
+.dog {
+    display: none;
+}
+.dog .head {
     height: 100px;
-    background-color: #FFE5C9;
-    border-radius: 50%;
-    border: 2px solid;
+    width: 100px;
+    background: red;
 }
-.body {
-    width: 150px;
-    height: 150px;
-    background-color: #FFE5C9;
-    border-radius: 50%;
-    border: 2px solid;
+#dog:checked ~ .scene .dog {
+    display: block;
+}
+input {
+    display: none;
+}
+label {
+    cursor: pointer;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    background: #DFFFFF;
+    z-index: 10;
+    font-weight: bold;
+    color: #99CCCC;
+}
+.labels {
+    position: fixed;
+    z-index: 10;
+    bottom: 1em;
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    left: 50%;
+    transform: translate(-50%);
+    border: 0.2em solid #99CCCC;
+    border-radius: 2em;
+}
+#bear:checked ~ .labels label[for="bear"],
+#dog:checked  ~ .labels label[for="dog"] {
+    background: #99CCCC;
+    color: #DFFFFF;
 }
